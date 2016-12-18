@@ -1,0 +1,68 @@
+\geometry{a4paper,top=2cm,bottom=2cm,left=3cm,right=1.5cm}
+\graphicspath{{images/}}
+
+% Times New Roman
+\renewcommand{\rmdefault}{ftm}
+
+% Contents
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+
+% Hyperlinks
+\hypersetup{hidelinks,unicode=true}
+
+% Bibliography
+\makeatletter
+\bibliographystyle{utf8gost705u}
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+% Captions
+\DeclareCaptionLabelSeparator{dot}{. }
+\captionsetup[figure]{labelsep=dot}
+\captionsetup[lstlisting]{labelsep=dot}
+\captionsetup[table]{labelsep=dot}
+
+% Disable margin overflow
+\sloppy
+
+% Абзацный отступ
+\parindent=1.5cm
+
+% Полуторный интервал между строками
+\onehalfspacing
+
+% Интервал между элементами списка
+%\setlist{noitemsep,nolistsep,leftmargin=1.5cm}
+\setlist{leftmargin=1.5cm}
+
+% Листинги
+\lstdefinestyle{lststyle}{
+  basicstyle=\small\normalfont\ttfamily,
+  captionpos=b,
+%  frame=single,
+  keepspaces=false,
+  numbers=left,
+  language=C,
+}
+\lstdefinestyle{verbatimstyle}{
+  basicstyle=\small\ttfamily,
+  columns=flexible,
+  breaklines=true,
+  numbers=none
+}
+\lstset{style=lststyle}
+
+% Для листинга
+%\lstnewenvironment{code}[1][]%
+%  {\noindent\minipage{\linewidth}\bigskip 
+%   \lstset{basicstyle=\ttfamily\footnotesize,frame=single,#1}}
+%  {\endminipage}
+% Использовать:
+% \begin{code}[caption={Подпись.},label={lst:метка}]
+% ... код ...
+% \end{code}
+
+% Нумерация списков
+\makeatletter
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
+\makeatother
